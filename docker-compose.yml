@@ -1,0 +1,79 @@
+version: '3.8'
+
+services:
+  nginx:
+    image: nginx:latest
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+      - ./front:/usr/share/nginx/html
+      - /etc/letsencrypt:/etc/letsencrypt:ro
+    depends_on:
+      - app
+    restart: always
+    networks:
+      - my-net
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8090:8090"
+    environment:
+      - JAVA_OPTS=-Xms1024m -Xmx1024m
+      #      - SPRING_DATASOURCE_URL=jdbc:mysql://petshopdatabase.c7suyiqy69t6.ap-northeast-2.rds.amazonaws.com:3306/petShop
+      #      - SPRING_DATASOURCE_USERNAME=admin
+      #      - SPRING_DATASOURCE_PASSWORD=petShop1234
+      - SPRING_REDIS_HOST=redis
+      - SPRING_REDIS_PORT=6379
+      - SPRING_RABBITMQ_HOST=rabbitmq
+      - SPRING_RABBITMQ_PORT=5672
+    depends_on:
+      - mysql
+      - rabbitmq
+    restart: always
+    networks:
+      - my-net
+
+  mysql:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: petShop1234
+      MYSQL_DATABASE: petshop
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+    restart: always
+    networks:
+      - my-net
+
+  redis:
+    image: redis:7.0
+    ports:
+      - "6379:6379"
+    volumes:
+      - ./redis.conf:/usr/local/etc/redis/redis.conf
+    command: ["redis-server", "/usr/local/etc/redis/redis.conf"]
+    restart: always
+    networks:
+      - my-net
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    restart: always
+    networks:
+      - my-net
+
+volumes:
+  mysql-data:
+
+networks:
+  my-net:
+    driver: bridge

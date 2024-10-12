@@ -1,0 +1,29 @@
+name: SFTP Deploy
+
+on:
+  pull_request:
+    types: [closed]
+    branches:
+      - main
+
+jobs:
+  deploy:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Setup SSH Agent
+      uses: webfactory/ssh-agent@v0.8.0
+      with:
+        ssh-private-key: ${{ secrets.SFTP_PRIVATE_KEY }}
+
+    - name: Deploy to SFTP server
+      run: |
+        scp -r -o StrictHostKeyChecking=no ./* ubuntu@ec2-52-78-21-95.ap-northeast-2.compute.amazonaws.com:/home/ubuntu/finalProject
+
+    - name: Set permissions on the server
+      run: |
+        ssh -o StrictHostKeyChecking=no ubuntu@ec2-52-78-21-95.ap-northeast-2.compute.amazonaws.com "sudo chmod -R 755 /home/ubuntu/finalProject"

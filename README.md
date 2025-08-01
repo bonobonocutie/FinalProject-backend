@@ -1,7 +1,7 @@
 # PETTORY
 반려동물 용품 무인매장 관리 시스템  
 <img width="300" alt="image" src="https://github.com/user-attachments/assets/7f161bba-1951-4eda-9a36-9640ba25407e" />
-<img  width="700" alt="image" src="https://github.com/user-attachments/assets/5d3775e5-e7cd-4ccb-aa6c-61d8cfff56d8" />
+<img alt="image" src="https://github.com/user-attachments/assets/5d3775e5-e7cd-4ccb-aa6c-61d8cfff56d8" />
 
 ## 개발 환경
 <img alt="image" src="https://github.com/user-attachments/assets/ec5313dd-10b7-4e4d-8c86-c0a592502533" />

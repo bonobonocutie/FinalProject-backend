@@ -1,13 +1,18 @@
 # PETTORY
 반려동물 용품 무인매장 관리 시스템  
-<img width="200" height="1464" alt="image" src="https://github.com/user-attachments/assets/7f161bba-1951-4eda-9a36-9640ba25407e" />
-<img width="800" height="480" alt="image" src="https://github.com/user-attachments/assets/5d3775e5-e7cd-4ccb-aa6c-61d8cfff56d8" />
+<img width="300" alt="image" src="https://github.com/user-attachments/assets/7f161bba-1951-4eda-9a36-9640ba25407e" />
+<img  width="700" alt="image" src="https://github.com/user-attachments/assets/5d3775e5-e7cd-4ccb-aa6c-61d8cfff56d8" />
 
 ## 개발 환경
-<img width="1000" height="605" alt="image" src="https://github.com/user-attachments/assets/ec5313dd-10b7-4e4d-8c86-c0a592502533" />
+<img alt="image" src="https://github.com/user-attachments/assets/ec5313dd-10b7-4e4d-8c86-c0a592502533" />
 
 ## ERD
-<img width="1000" height="955" alt="image" src="https://github.com/user-attachments/assets/858dae19-daf4-4403-89a1-8535e53897ab" />
+<img alt="image" src="https://github.com/user-attachments/assets/858dae19-daf4-4403-89a1-8535e53897ab" />
+
+## API 명세서
+<img alt="image" src="https://github.com/user-attachments/assets/6684fe13-5f04-458c-8df8-6947713ceeda" />
+<img alt="image" src="https://github.com/user-attachments/assets/401c7d9d-408d-4a4d-be5f-3cd825baa482" />
+
 
 ## 담당 업무
 ### 키오스크
@@ -24,13 +29,13 @@
 
 ## 주요 기능
 ### 핵심 기능
-<img width="1333" height="573" alt="image" src="https://github.com/user-attachments/assets/463866af-1f95-4a31-b986-083f6b0b183c" />
+<img alt="image" src="https://github.com/user-attachments/assets/463866af-1f95-4a31-b986-083f6b0b183c" />
 
 ### 키오스크
-<img width="795" height="538" alt="image" src="https://github.com/user-attachments/assets/de203076-be1e-4703-81cf-39474a0f1911" />
+<img alt="image" src="https://github.com/user-attachments/assets/de203076-be1e-4703-81cf-39474a0f1911" />
 
 ### 점주
-<img width="813" height="777" alt="image" src="https://github.com/user-attachments/assets/e77475fd-ac18-40b6-8071-075f3d0e24a1" />
+<img alt="image" src="https://github.com/user-attachments/assets/e77475fd-ac18-40b6-8071-075f3d0e24a1" />
 
 ## 시연 영상
 ### 키오스크
